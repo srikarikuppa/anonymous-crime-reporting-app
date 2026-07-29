@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0F19;
+    color: #F3F4F6;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Cyber Background Grid */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Radar scanning effect */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
+
+/* Audio wave pulse animation */
+@keyframes wave-bar {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+.animate-wave-1 { animation: wave-bar 0.8s ease-in-out infinite; }
+.animate-wave-2 { animation: wave-bar 0.6s ease-in-out infinite 0.15s; }
+.animate-wave-3 { animation: wave-bar 0.9s ease-in-out infinite 0.3s; }
+.animate-wave-4 { animation: wave-bar 0.7s ease-in-out infinite 0.45s; }
+.animate-wave-5 { animation: wave-bar 1.0s ease-in-out infinite 0.1s; }
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 0 30px -10px rgba(0, 242, 254, 0.15);
+}
